@@ -1,0 +1,45 @@
+body {
+    /*background-color: red;*/
+    /*background-image: url(shoe.jpg);*/
+
+}
+h2 {
+    /*border: 1px solid black;*/
+    font-family: 'Delius Unicase', cursive;
+    margin: auto;
+    width: 50%;
+    font-size: -webkit-xxx-large;
+    padding-bottom: 4%;
+    text-align: center;
+    padding-top: 4%;
+    text-transform: uppercase;
+}
+form {
+    font-family: 'Delius Unicase', cursive;
+    margin: auto;
+    width: 50%;
+    padding-bottom: 4%;
+    text-align: center;
+    padding-top: 4%;
+    text-transform: uppercase;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+.mySlideShow {
+    background-image: url('shoe.jpg');
+    background-position: center;
+    background-repeat: repeat-x;
+    font-family: 'Delius Unicase', cursive;
+    margin: auto;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    padding-bottom: 4%;
+    padding-top: 4%;
+    text-align: center;
+    text-transform: uppercase;
+    width: 50%;
+
+}
+div {
+
+}
