@@ -1,5 +1,23 @@
+.myBox {
+    border: 1px solid black;
+    /*background-color: purple;
+    padding: 16px;
+    margin-top: 30px;
+    height: 1500px; /* Used in this example to enable scrolling *
+    overflow: scroll;*/
+
+}
+.myHeader {
+    border: 1px dotted red;
+    /*background-color: skyblue;
+    /*overflow: hidden;*
+    position: fixed;
+    top: 0;
+    width: 100%;*/
+}
+
 body {
-    /*background-color: red;*/
+    background-color: rgb(192, 190, 190);
     /*background-image: url(shoe.jpg);*/
 
 }
@@ -9,37 +27,64 @@ h2 {
     margin: auto;
     width: 50%;
     font-size: -webkit-xxx-large;
-    padding-bottom: 4%;
+    padding-bottom: 0%;
     text-align: center;
-    padding-top: 4%;
+    padding-top: 0%;
     text-transform: uppercase;
+
 }
 form {
+    /*border: 1px dotted;*/
     font-family: 'Delius Unicase', cursive;
     margin: auto;
     width: 50%;
-    padding-bottom: 4%;
+    padding-bottom: 0%;
     text-align: center;
-    padding-top: 4%;
+    padding-top: 0%;
     text-transform: uppercase;
     margin-bottom: 2%;
     margin-top: 2%;
 }
-.mySlideShow {
-    background-image: url('shoe.jpg');
-    background-position: center;
-    background-repeat: repeat-x;
-    font-family: 'Delius Unicase', cursive;
-    margin: auto;
-    margin-bottom: 2%;
-    margin-top: 2%;
-    padding-bottom: 4%;
-    padding-top: 4%;
+table {
+    background-color: aliceblue;
+    border-collapse: collapse;
+    font-family: 'EB Garamond', serif;
+    font-family: 'Arapey', serif;
+    font-weight: bolder;
+    margin-bottom: 1%;
     text-align: center;
-    text-transform: uppercase;
-    width: 50%;
+    width: 71%;
+}
+table td {
+   border:2px solid #000;
+}
+html,body {
+	margin: 0;
+	padding: 0;
+}
+.slider {
+	width: 774px;
+	margin: 2em auto;
 
 }
-div {
 
+.slider-wrapper {
+	width: 100%;
+	height: 400px;
+	position: relative;
+    margin: 0%;
+    margin-left: -100%;
+}
+
+.slide {
+	float: left;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 3s linear;
+}
+
+.slider-wrapper > .slide:first-child {
+	opacity: 1;
 }

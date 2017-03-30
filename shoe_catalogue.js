@@ -1,65 +1,113 @@
-var shoeColor, shoeSize, colour, display, shoeBrand;
-shoeColor = document.getElementById("shoeColor");
-shoeSize = document.getElementById("shoeSize");
-shoeBrand = document.getElementById('shoeBrand');
-colour = document.querySelectorAll('.colour');
-display = document.getElementById('userDisplay');
 
 function myFunction() {
-    var userChoiceBrand, userChoiceColor, userChoiceSize, searched;
-    userChoiceColor = shoeColor.options[shoeColor.selectedIndex].value;
-    userChoiceSize = shoeSize.options[shoeSize.selectedIndex].value;
-    userChoiceBrand = shoeBrand.options[shoeBrand.selectedIndex].value;
-    searched = []
+    var searched = [];
+    var shoeSize = document.getElementById("shoeSize").value;
+    var shoeColor = document.getElementById("shoeColor").value;
+    var shoeBrand = document.getElementById('shoeBrand').value;
+    var shoes = [
+        {brand: 'Nike', color : 'black', price : 650, in_stock : 13, size: 1},
+        {brand: 'Nike', color : 'blue', price : 999.99, in_stock : 1, size: 1},
+        {brand: 'Puma', color : 'blue', price : 1999.99, in_stock : 12, size: 1}
+
+    ];
 
     for (var i = 0; i < shoes.length; i++) {
-        var newShoes, newShoeColor, newShoeSize, numbInStk, shoePrice;
-        newShoes = shoes[i];
-        newShoeColor =  newShoes.color;
-        newShoeSize = newShoes.size;
-        numbInStk = newShoes.in_stock;
-        shoePrice = newShoes.price;
+        var newShoeColor, newShoeBrand, newShoeSize, numbInStk, shoePrice;
+        newShoeColor = shoes[i].color;
+        newShoeSize = shoes[i].size;
+        newShoeBrand = shoes[i].brand;
+        numbInStk = shoes[i].in_stock;
 
-        var mySlideDiv = document.createElement('div');
-        mySlideDiv.classList.add('mySlideShow');
+         if (shoeBrand === newShoeBrand && shoeColor === newShoeColor ) { //color and brand
+            searched.push(shoes[i]);
 
+        } else if (shoeColor === newShoeColor  && newShoeSize === shoeSize ) { //color  size
+            searched.push(shoes[i]);
 
-        if (userChoiceColor === newShoeColor && userChoiceSize === "") {
-            searched.push(newShoes);
+        } else if (newShoeSize === shoeSize &&  shoeBrand === newShoeBrand ) { //size and brand
+            searched.push(shoes[i]);
 
-
-            mySlideDiv.innerHTML = "We have " + numbInStk + " " + userChoiceColor + " sneaker(s) in stock. Each sneaker cost R" + shoePrice + ". ";
-            document.body.appendChild(mySlideDiv);
-
-        } else if (userChoiceSize === newShoeSize && userChoiceColor === "") {
-            searched.push(newShoes);
-            display.innerHTML = "We have " + numbInStk + " " + userChoiceColor + " sneaker(s) in stock. Each sneaker cost R" + shoePrice + ". ";
         }
-
-        shoeColor.value = "";
-        shoeSize.value = "";
-        shoeBrand.value = "";
-
     }
+    shoeColor.value = "";
+    shoeSize.value = "";
+    shoeBrand.value = "";
+
+
+    var myInfo = document.getElementById('j').innerHTML;
+    var template = Handlebars.compile(myInfo);
+
+    var tableSearch = template({
+        searched
+    });
+    document.body.innerHTML += tableSearch;
 
 }
-var shoes = [
-    {
-        color : 'black',
-        price : 650,
-        in_stock : 15,
-        size: 3
-    },
-    {
-        color : 'blue',
-        price : 350,
-        in_stock : 5,
-        size: 8
-    },
-    {
-        color : 'orange',
-        price : 275,
-        in_stock : 3,
-        size: 12
-    },
-];
+
+
+(function() {
+
+	function Slideshow( element ) {
+		this.el = document.querySelector( element );
+		this.init();
+	}
+
+	Slideshow.prototype = {
+		init: function() {
+			this.wrapper = this.el.querySelector( ".slider-wrapper" );
+			this.slides = this.el.querySelectorAll( ".slide" );
+			this.previous = this.el.querySelector( ".slider-previous" );
+			this.next = this.el.querySelector( ".slider-next" );
+			this.index = 0;
+			this.total = this.slides.length;
+			this.timer = null;
+
+			this.action();
+			this.stopStart();
+		},
+		_slideTo: function( slide ) {
+			var currentSlide = this.slides[slide];
+			currentSlide.style.opacity = 1;
+
+			for( var i = 0; i < this.slides.length; i++ ) {
+				var slide = this.slides[i];
+				if( slide !== currentSlide ) {
+					slide.style.opacity = 0;
+				}
+			}
+		},
+		action: function() {
+			var self = this;
+			self.timer = setInterval(function() {
+				self.index++;
+				if( self.index == self.slides.length ) {
+					self.index = 0;
+				}
+				self._slideTo( self.index );
+
+			}, 3000);
+		},
+		stopStart: function() {
+			var self = this;
+			self.el.addEventListener( "mouseover", function() {
+				clearInterval( self.timer );
+				self.timer = null;
+
+			}, false);
+			self.el.addEventListener( "mouseout", function() {
+				self.action();
+
+			}, false);
+		}
+
+
+	};
+
+	document.addEventListener( "DOMContentLoaded", function() {
+
+		var slider = new Slideshow( "#main-slider" );
+
+	});
+
+
+})();
