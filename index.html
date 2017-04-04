@@ -11,58 +11,34 @@
         <link rel="stylesheet" href="shoe_catalogue.css">
     </head>
     <body>
-        <div class="myHeader">
-                <h2>Shoe Catalogue</h2>
-            </div>
-        <div class="myBox" align="center">
-            <div class="slider" id="main-slider"><!-- outermost container element -->
+        <header class="site-header">
+            <h2>Shoe Catalogue</h2>
+            <!-- <a href="shoe.jpg">Home</a>
+            <a href="#news">News</a>
+            <a href="#newrel">New Release</a> -->
+            <!-- <form class="addInput" action="index.html" method="get">
+            brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 1
+            <input type="text" name="brand" placeholder="Brand">
+            <input type="text" name="color" placeholder="Color">
+            <input type="text" name="price" placeholder="Price">
+            <input type="text" name="in_stock" placeholder="Stock">
+            <input type="text" name="size" placeholder="Shoe Size">
+            <button type="button" name="myBtn">Add</button>
+        </form> -->
+
+        </header>
+
+        <div class="slider" id="main-slider"><!-- outermost container element -->
                 <div class="slider-wrapper"><!-- innermost wrapper element -->
                     <img src="sneaker-1.jpg" alt="First" class="slide" style="margin=auto" /><!-- slides -->
                     <img src="sneaker-2.jpg" alt="Second" class="slide" style="margin=auto"/>
                     <img src="sneaker-3.jpg" alt="Third" class="slide" style="margin=auto" />
+                    <img src="shoe.jpg" alt="Forth" class="slide" style="margin=auto" />
                 </div>
             </div>
-            <form action="index.html" method="get">
+        <!-- <div class="myBox" align="center"> -->
 
-                <label for="shoeSize"><b>Size: </b></label>
-                <select id="shoeSize">
-                    <option value="" disabled selected>Select your option</option>
-                    <option value="1" class="size">1</option>
-                    <option value="2" class="size">2</option>
-                    <option value="3" class="size">3</option>
-                    <option value="4" class="size">4</option>
-                    <option value="5" class="size">5</option>
-                    <option value="6" class="size">6</option>
-                    <option value="7" class="size">7</option>
-                    <option value="8" class="size">8</option>
-                    <option value="9" class="size">9</option>
-                    <option value="10" class="size">10</option>
-                    <option value="11" class="size">11</option>
-                    <option value="12" class="size">12</option>
-
-                </select>
-
-                <label for="shoeColor"><b>Colour: </b></label>
-                <select id="shoeColor">
-                    <option value="" disabled selected>Select your option</option>
-                    <option value="black" class="colour">Black</option>
-                    <option value="blue" class="colour">Blue</option>
-                    <option value="green" class="colour">Green</option>
-                    <option value="white" class="colour">White</option>
-                </select>
-
-                <label for="shoeBrand"><b>Brand: </b></label>
-                <select id="shoeBrand">
-                    <option value="" disabled selected>Select your option</option>
-                    <option value="Adidas" class="brand">Adidas</option>
-                    <option value="Nike" class="brand">Nike</option>
-                    <option value="Puma" class="brand">Puma</option>
-                </select>
-
-                <button type="button" id="mySearchBtn" onclick="myFunction();">Search</button>
-
-                </form>
-
+        <main>
             <script id="j" type="text/x-handlebars-template">
                 <table align="center">
                     <tbody>
@@ -87,9 +63,52 @@
                     </tbody>
                 </table>
             </script>
-        </div>
-        <script src="shoe_catalogue.js" charset="utf-8"></script>
+        <!-- </div> -->
+            <p align="center" id="k"></p>
+        </main>
 
+        <footer class="site-footer">
+                <form class="searchInput" action="index.html" method="get">
+
+                    <label for="shoeSize"><b>Size: </b></label>
+                    <select id="shoeSize">
+                        <option value="" disabled selected>Select your option</option>
+                        <option value="1" class="size">1</option>
+                        <option value="2" class="size">2</option>
+                        <option value="3" class="size">3</option>
+                        <option value="4" class="size">4</option>
+                        <option value="5" class="size">5</option>
+                        <option value="6" class="size">6</option>
+                        <option value="7" class="size">7</option>
+                        <option value="8" class="size">8</option>
+                        <option value="9" class="size">9</option>
+                        <option value="10" class="size">10</option>
+                        <option value="11" class="size">11</option>
+                        <option value="12" class="size">12</option>
+
+                    </select>
+
+                    <label for="shoeColor"><b>Colour: </b></label>
+                    <select id="shoeColor">
+                        <option value="" disabled selected>Select your option</option>
+                        <option value="black" class="colour">Black</option>
+                        <option value="blue" class="colour">Blue</option>
+                        <option value="green" class="colour">Green</option>
+                        <option value="white" class="colour">White</option>
+                    </select>
+
+                    <label for="shoeBrand"><b>Brand: </b></label>
+                    <select id="shoeBrand">
+                        <option value="" disabled selected>Select your option</option>
+                        <option value="Adidas" class="brand">Adidas</option>
+                        <option value="Nike" class="brand">Nike</option>
+                        <option value="Puma" class="brand">Puma</option>
+                    </select>
+
+                    <button type="button" id="mySearchBtn" onclick="myFunction();">Search</button>
+                    </form>
+            </footer>
+        <script src="shoe_catalogue.js" charset="utf-8"></script>
     </body>
 
 </html>

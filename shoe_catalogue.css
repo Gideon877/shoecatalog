@@ -1,39 +1,22 @@
-.myBox {
-    border: 1px solid black;
-    /*background-color: purple;
-    padding: 16px;
-    margin-top: 30px;
-    height: 1500px; /* Used in this example to enable scrolling *
-    overflow: scroll;*/
-
+.addInput {
+    background-color: red;
+    /*margin-left: 52%;
+    margin-top: -30%;*/
 }
-.myHeader {
-    border: 1px dotted red;
-    /*background-color: skyblue;
-    /*overflow: hidden;*
-    position: fixed;
-    top: 0;
-    width: 100%;*/
-}
-
-body {
-    background-color: rgb(192, 190, 190);
-    /*background-image: url(shoe.jpg);*/
-
-}
+body {background-color: rgb(192, 190, 190);}
 h2 {
-    border: 1px solid black;
     font-family: 'Delius Unicase', cursive;
-    margin: auto;
+    /*margin: auto;
     width: 50%;
     font-size: -webkit-xxx-large;
     padding-bottom: 0%;
     text-align: center;
     padding-top: 0%;
     text-transform: uppercase;
-
+    position: fixed;*/
 }
-form {
+
+.searchInput {
     /*border: 1px dotted;*/
     font-family: 'Delius Unicase', cursive;
     margin: auto;
@@ -56,7 +39,7 @@ table {
     width: 50%;
 }
 table td {
-   border:2px solid #000;
+   border:0.5px solid #000;
 }
 html,body {
 	margin: 0;
@@ -87,4 +70,71 @@ html,body {
 
 .slider-wrapper > .slide:first-child {
 	opacity: 1;
+}
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.wf-active body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #ddd;
+    padding: 1em;
+    margin: 0;
+    /*border: 1px solid red;*/
+}
+.site-header {
+    text-align: center;
+    padding: 1em 0;
+    border-bottom: solid 1px #ccc;
+    background-color: #fff;
+    float: left;
+    clear: left;
+    width: 35%;
+}
+
+.site-header {
+    text-align: center;
+    padding: 1em 0;
+    border-bottom: solid 1px black;
+    background-color: skyblue;
+
+
+}
+main {
+    padding: 1em;
+    background-color: purple;
+}
+main {
+    float: right;
+    width: 60%;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1em 0;
+    border-bottom: solid 1px black;
+    background-color: pink;
+
+}
+
+.site-header, .site-footer {
+    float: left;
+    clear: left;
+    width: 35%;
 }
