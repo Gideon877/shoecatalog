@@ -22,7 +22,7 @@ body {
 
 }
 h2 {
-    /*border: 1px solid black;*/
+    border: 1px solid black;
     font-family: 'Delius Unicase', cursive;
     margin: auto;
     width: 50%;
@@ -53,7 +53,7 @@ table {
     font-weight: bolder;
     margin-bottom: 1%;
     text-align: center;
-    width: 71%;
+    width: 50%;
 }
 table td {
    border:2px solid #000;

@@ -1,34 +1,173 @@
 
+var shoes = [//black blue red green white // adidas puma nikee
+    {brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 1},
+    {brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 2},
+    {brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 3},
+    {brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 4},
+    {brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 5},
+    {brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 6},
+    {brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 7},
+    {brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 8},
+    {brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 9},
+    {brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 10},
+    {brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 11},
+    {brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 12},
+
+    {brand: 'Nike', color : 'white', price : 1999.99, in_stock : 10, size: 1},
+    {brand: 'Nike', color : 'white', price : 1999.99, in_stock : 10, size: 2},
+    {brand: 'Nike', color : 'white', price : 1999.99, in_stock : 10, size: 3},
+    {brand: 'Nike', color : 'white', price : 1999.99, in_stock : 10, size: 4},
+    {brand: 'Nike', color : 'white', price : 1999.99, in_stock : 10, size: 5},
+    {brand: 'Nike', color : 'white', price : 1999.99, in_stock : 20, size: 6},
+    {brand: 'Nike', color : 'white', price : 1999.99, in_stock : 20, size: 7},
+    {brand: 'Nike', color : 'white', price : 1999.99, in_stock : 15, size: 8},
+    {brand: 'Nike', color : 'white', price : 1999.99, in_stock : 15, size: 9},
+    {brand: 'Nike', color : 'white', price : 1999.99, in_stock : 8, size: 10},
+    {brand: 'Nike', color : 'white', price : 1999.99, in_stock : 5, size: 11},
+
+
+    {brand: 'Nike', color : 'blue', price : 999.99, in_stock : 10, size: 1},
+    {brand: 'Nike', color : 'blue', price : 999.99, in_stock : 10, size: 2},
+    {brand: 'Nike', color : 'blue', price : 999.99, in_stock : 10, size: 3},
+    {brand: 'Nike', color : 'blue', price : 999.99, in_stock : 10, size: 4},
+    {brand: 'Nike', color : 'blue', price : 999.99, in_stock : 10, size: 5},
+    {brand: 'Nike', color : 'blue', price : 999.99, in_stock : 10, size: 6},
+    {brand: 'Nike', color : 'blue', price : 999.99, in_stock : 10, size: 7},
+
+    {brand: 'Nike', color : 'green', price : 650, in_stock : 10, size: 1},
+    {brand: 'Nike', color : 'green', price : 650, in_stock : 10, size: 2},
+    {brand: 'Nike', color : 'green', price : 650, in_stock : 10, size: 3},
+    {brand: 'Nike', color : 'green', price : 650, in_stock : 10, size: 4},
+    {brand: 'Nike', color : 'green', price : 650, in_stock : 10, size: 5},
+    {brand: 'Nike', color : 'green', price : 650, in_stock : 10, size: 6},
+    {brand: 'Nike', color : 'green', price : 650, in_stock : 10, size: 7},
+    {brand: 'Nike', color : 'green', price : 650, in_stock : 10, size: 8},
+    {brand: 'Nike', color : 'green', price : 650, in_stock : 10, size: 9},
+
+    {brand: 'Puma', color : 'black', price : 1299, in_stock : 10, size: 1},
+    {brand: 'Puma', color : 'black', price : 1299, in_stock : 10, size: 2},
+    {brand: 'Puma', color : 'black', price : 1299, in_stock : 10, size: 3},
+    {brand: 'Puma', color : 'black', price : 1299, in_stock : 10, size: 4},
+    {brand: 'Puma', color : 'black', price : 1299, in_stock : 10, size: 5},
+    {brand: 'Puma', color : 'black', price : 1299, in_stock : 10, size: 6},
+    {brand: 'Puma', color : 'black', price : 1299, in_stock : 10, size: 7},
+    {brand: 'Puma', color : 'black', price : 1299, in_stock : 10, size: 8},
+    {brand: 'Puma', color : 'black', price : 1299, in_stock : 10, size: 9},
+    {brand: 'Puma', color : 'black', price : 1299, in_stock : 10, size: 10},
+    {brand: 'Puma', color : 'black', price : 1299, in_stock : 10, size: 11},
+    {brand: 'Puma', color : 'black', price : 1299, in_stock : 10, size: 12},
+
+    {brand: 'Puma', color : 'blue', price : 1999.99, in_stock : 10, size: 4},
+    {brand: 'Puma', color : 'blue', price : 1999.99, in_stock : 10, size: 5},
+    {brand: 'Puma', color : 'blue', price : 1999.99, in_stock : 20, size: 6},
+    {brand: 'Puma', color : 'blue', price : 1999.99, in_stock : 20, size: 7},
+    {brand: 'Puma', color : 'blue', price : 1999.99, in_stock : 15, size: 8},
+    {brand: 'Puma', color : 'blue', price : 1999.99, in_stock : 15, size: 9},
+    {brand: 'Puma', color : 'blue', price : 1999.99, in_stock : 8, size: 10},
+    {brand: 'Puma', color : 'blue', price : 1999.99, in_stock : 5, size: 11},
+
+    {brand: 'Puma', color : 'white', price : 1999.99, in_stock : 10, size: 1},
+    {brand: 'Puma', color : 'white', price : 1999.99, in_stock : 10, size: 2},
+    {brand: 'Puma', color : 'white', price : 1999.99, in_stock : 10, size: 3},
+    {brand: 'Puma', color : 'white', price : 1999.99, in_stock : 10, size: 4},
+    {brand: 'Puma', color : 'white', price : 1999.99, in_stock : 10, size: 5},
+    {brand: 'Puma', color : 'white', price : 1999.99, in_stock : 20, size: 6},
+    {brand: 'Puma', color : 'white', price : 1999.99, in_stock : 20, size: 7},
+    {brand: 'Puma', color : 'white', price : 1999.99, in_stock : 15, size: 8},
+    {brand: 'Puma', color : 'white', price : 1999.99, in_stock : 15, size: 9},
+    {brand: 'Puma', color : 'white', price : 1999.99, in_stock : 8, size: 10},
+    {brand: 'Puma', color : 'white', price : 1999.99, in_stock : 5, size: 11},
+
+    {brand: 'Puma', color : 'green', price : 1459.99, in_stock : 10, size: 1},
+    {brand: 'Puma', color : 'green', price : 1459.99, in_stock : 10, size: 2},
+    {brand: 'Puma', color : 'green', price : 1459.99, in_stock : 10, size: 3},
+    {brand: 'Puma', color : 'green', price : 1459.99, in_stock : 10, size: 4},
+    {brand: 'Puma', color : 'green', price : 1459.99, in_stock : 10, size: 5},
+    {brand: 'Puma', color : 'green', price : 1459.99, in_stock : 20, size: 6},
+    {brand: 'Puma', color : 'green', price : 1459.99, in_stock : 20, size: 7},
+    {brand: 'Puma', color : 'green', price : 1459.99, in_stock : 15, size: 8},
+    {brand: 'Puma', color : 'green', price : 1459.99, in_stock : 15, size: 9},
+    {brand: 'Puma', color : 'green', price : 1459.99, in_stock : 8, size: 10},
+    {brand: 'Puma', color : 'green', price : 1459.99, in_stock : 5, size: 11},
+
+    {brand: 'Adidas', color : 'black', price : 749, in_stock : 10, size: 1},
+    {brand: 'Adidas', color : 'black', price : 749, in_stock : 10, size: 2},
+    {brand: 'Adidas', color : 'black', price : 749, in_stock : 10, size: 3},
+    {brand: 'Adidas', color : 'black', price : 749, in_stock : 10, size: 4},
+    {brand: 'Adidas', color : 'black', price : 749, in_stock : 10, size: 5},
+    {brand: 'Adidas', color : 'black', price : 749, in_stock : 10, size: 6},
+    {brand: 'Adidas', color : 'black', price : 749, in_stock : 10, size: 7},
+    {brand: 'Adidas', color : 'black', price : 749, in_stock : 10, size: 8},
+    {brand: 'Adidas', color : 'black', price : 749, in_stock : 10, size: 9},
+    {brand: 'Adidas', color : 'black', price : 749, in_stock : 10, size: 10},
+    {brand: 'Adidas', color : 'black', price : 749, in_stock : 10, size: 11},
+    {brand: 'Adidas', color : 'black', price : 749, in_stock : 10, size: 12},
+
+    {brand: 'Adidas', color : 'white', price : 1999.99, in_stock : 10, size: 1},
+    {brand: 'Adidas', color : 'white', price : 1999.99, in_stock : 10, size: 2},
+    {brand: 'Adidas', color : 'white', price : 1999.99, in_stock : 10, size: 3},
+    {brand: 'Adidas', color : 'white', price : 1999.99, in_stock : 10, size: 4},
+    {brand: 'Adidas', color : 'white', price : 1999.99, in_stock : 10, size: 5},
+    {brand: 'Adidas', color : 'white', price : 1999.99, in_stock : 20, size: 6},
+    {brand: 'Adidas', color : 'white', price : 1999.99, in_stock : 20, size: 7},
+    {brand: 'Adidas', color : 'white', price : 1999.99, in_stock : 15, size: 8},
+    {brand: 'Adidas', color : 'white', price : 1999.99, in_stock : 15, size: 9},
+    {brand: 'Adidas', color : 'white', price : 1999.99, in_stock : 8, size: 10},
+    {brand: 'Adidas', color : 'white', price : 1999.99, in_stock : 5, size: 11},
+
+
+    {brand: 'Adidas', color : 'blue', price : 999.99, in_stock : 10, size: 1},
+    {brand: 'Adidas', color : 'blue', price : 999.99, in_stock : 10, size: 2},
+    {brand: 'Adidas', color : 'blue', price : 999.99, in_stock : 10, size: 3},
+    {brand: 'Adidas', color : 'blue', price : 999.99, in_stock : 10, size: 4},
+    {brand: 'Adidas', color : 'blue', price : 999.99, in_stock : 10, size: 5},
+    {brand: 'Adidas', color : 'blue', price : 999.99, in_stock : 10, size: 6},
+    {brand: 'Adidas', color : 'blue', price : 999.99, in_stock : 10, size: 7},
+
+    {brand: 'Adidas', color : 'green', price : 650, in_stock : 10, size: 1},
+    {brand: 'Adidas', color : 'green', price : 650, in_stock : 10, size: 2},
+    {brand: 'Adidas', color : 'green', price : 650, in_stock : 10, size: 3},
+    {brand: 'Adidas', color : 'green', price : 650, in_stock : 10, size: 4},
+    {brand: 'Adidas', color : 'green', price : 650, in_stock : 10, size: 5},
+    {brand: 'Adidas', color : 'green', price : 650, in_stock : 10, size: 6},
+    {brand: 'Adidas', color : 'green', price : 650, in_stock : 10, size: 7},
+    {brand: 'Adidas', color : 'green', price : 650, in_stock : 10, size: 8},
+    {brand: 'Adidas', color : 'green', price : 650, in_stock : 10, size: 9}
+];
+
 function myFunction() {
-    var searched = [];
-    var shoeSize = document.getElementById("shoeSize").value;
-    var shoeColor = document.getElementById("shoeColor").value;
-    var shoeBrand = document.getElementById('shoeBrand').value;
-    var shoes = [
-        {brand: 'Nike', color : 'black', price : 650, in_stock : 13, size: 1},
-        {brand: 'Nike', color : 'blue', price : 999.99, in_stock : 1, size: 1},
-        {brand: 'Puma', color : 'blue', price : 1999.99, in_stock : 12, size: 1}
 
-    ];
+    if (shoeSize.value !== "") { //selected a size.
+        var searched = shoes.filter(sizeFilter); //New shoe list
 
-    for (var i = 0; i < shoes.length; i++) {
-        var newShoeColor, newShoeBrand, newShoeSize, numbInStk, shoePrice;
-        newShoeColor = shoes[i].color;
-        newShoeSize = shoes[i].size;
-        newShoeBrand = shoes[i].brand;
-        numbInStk = shoes[i].in_stock;
-
-         if (shoeBrand === newShoeBrand && shoeColor === newShoeColor ) { //color and brand
-            searched.push(shoes[i]);
-
-        } else if (shoeColor === newShoeColor  && newShoeSize === shoeSize ) { //color  size
-            searched.push(shoes[i]);
-
-        } else if (newShoeSize === shoeSize &&  shoeBrand === newShoeBrand ) { //size and brand
-            searched.push(shoes[i]);
-
-        }
     }
+    if (shoeColor.value !== "") { //color selected
+        if (shoeSize.value !== ""){
+            searched = searched.filter(colorFilter); //New shoe list
+        }
+        else {searched = shoes.filter(colorFilter);}
+    }
+    if (shoeBrand.value !== "") {
+        if (shoeColor.value !== "" || shoeSize.value !== "") { //selected size
+            searched = searched.filter(brandFilter); //New shoe list
+        }
+        else {searched = shoes.filter(brandFilter);}
+    }
+
+
+
+    function sizeFilter(input){
+        return input.size == shoeSize.value;
+    }
+
+    function colorFilter(input){
+        return input.color == shoeColor.value;
+    }
+
+    function brandFilter(input){
+        return input.brand == shoeBrand.value;
+    }
+
     shoeColor.value = "";
     shoeSize.value = "";
     shoeBrand.value = "";
@@ -36,7 +175,6 @@ function myFunction() {
 
     var myInfo = document.getElementById('j').innerHTML;
     var template = Handlebars.compile(myInfo);
-
     var tableSearch = template({
         searched
     });

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <link rel="shortcut icon" href="nik.png">
+        <link rel="shortcut icon" href="nik.jpg">
         <title>TM | Sneakers</title>
         <script src="handlebars-v4.0.5.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Delius+Unicase:400,700" rel="stylesheet">
@@ -24,7 +24,7 @@
             </div>
             <form action="index.html" method="get">
 
-
+                <label for="shoeSize"><b>Size: </b></label>
                 <select id="shoeSize">
                     <option value="" disabled selected>Select your option</option>
                     <option value="1" class="size">1</option>
@@ -40,19 +40,18 @@
                     <option value="11" class="size">11</option>
                     <option value="12" class="size">12</option>
 
-
                 </select>
 
-
+                <label for="shoeColor"><b>Colour: </b></label>
                 <select id="shoeColor">
                     <option value="" disabled selected>Select your option</option>
                     <option value="black" class="colour">Black</option>
                     <option value="blue" class="colour">Blue</option>
-                    <option value="orange" class="colour">Orange</option>
+                    <option value="green" class="colour">Green</option>
                     <option value="white" class="colour">White</option>
                 </select>
 
-
+                <label for="shoeBrand"><b>Brand: </b></label>
                 <select id="shoeBrand">
                     <option value="" disabled selected>Select your option</option>
                     <option value="Adidas" class="brand">Adidas</option>
@@ -72,15 +71,17 @@
                             <td>Color</td>
                             <td>Price</td>
                             <td>In Stock</td>
-                            <td>Shoe Size Available</td>
+                            <td>Size</td>
+
                         </tr>
                         {{#each searched}}
                         <tr>
                             <td>{{brand}}</td>
                             <td>{{color}}</td>
-                            <td>{{price}}</td>
+                            <td>R{{price}}</td>
                             <td>{{in_stock}}</td>
                             <td>{{size}}</td>
+
                         </tr>
                         {{/each}}
                     </tbody>
