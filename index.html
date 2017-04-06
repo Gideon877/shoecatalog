@@ -16,31 +16,14 @@
             <!-- <a href="shoe.jpg">Home</a>
             <a href="#news">News</a>
             <a href="#newrel">New Release</a> -->
-            <!-- <form class="addInput" action="index.html" method="get">
-            brand: 'Nike', color : 'black', price : 749, in_stock : 10, size: 1
-            <input type="text" name="brand" placeholder="Brand">
-            <input type="text" name="color" placeholder="Color">
-            <input type="text" name="price" placeholder="Price">
-            <input type="text" name="in_stock" placeholder="Stock">
-            <input type="text" name="size" placeholder="Shoe Size">
-            <button type="button" name="myBtn">Add</button>
-        </form> -->
+
 
         </header>
-
-        <div class="slider" id="main-slider"><!-- outermost container element -->
-                <div class="slider-wrapper"><!-- innermost wrapper element -->
-                    <img src="sneaker-1.jpg" alt="First" class="slide" style="margin=auto" /><!-- slides -->
-                    <img src="sneaker-2.jpg" alt="Second" class="slide" style="margin=auto"/>
-                    <img src="sneaker-3.jpg" alt="Third" class="slide" style="margin=auto" />
-                    <img src="shoe.jpg" alt="Forth" class="slide" style="margin=auto" />
-                </div>
-            </div>
-        <!-- <div class="myBox" align="center"> -->
 
         <main>
             <script id="j" type="text/x-handlebars-template">
                 <table align="center">
+                    <thead><b>Results Found :-)</b></thead>
                     <tbody>
                         <tr>
                             <td>Brand</td>
@@ -48,7 +31,6 @@
                             <td>Price</td>
                             <td>In Stock</td>
                             <td>Size</td>
-
                         </tr>
                         {{#each searched}}
                         <tr>
@@ -57,19 +39,22 @@
                             <td>R{{price}}</td>
                             <td>{{in_stock}}</td>
                             <td>{{size}}</td>
-
                         </tr>
                         {{/each}}
                     </tbody>
                 </table>
             </script>
-        <!-- </div> -->
-            <p align="center" id="k"></p>
+
+            <div align="center" id="displayOutput"></div>
         </main>
 
         <footer class="site-footer">
-                <form class="searchInput" action="index.html" method="get">
+            <span>Search Sneakers</span>
+            <button type="button" onclick="hideShowSearch();">Hide/Show</button>
+            <span>Add a new stock</span>
+            <button type="button" onclick="hideShowAdd();">Hide/Show</button>
 
+            <form id="searchInput" action="index.html" method="get" style="display: none;">
                     <label for="shoeSize"><b>Size: </b></label>
                     <select id="shoeSize">
                         <option value="" disabled selected>Select your option</option>
@@ -86,7 +71,7 @@
                         <option value="11" class="size">11</option>
                         <option value="12" class="size">12</option>
 
-                    </select>
+                    </select> <br>
 
                     <label for="shoeColor"><b>Colour: </b></label>
                     <select id="shoeColor">
@@ -95,7 +80,7 @@
                         <option value="blue" class="colour">Blue</option>
                         <option value="green" class="colour">Green</option>
                         <option value="white" class="colour">White</option>
-                    </select>
+                    </select> <br>
 
                     <label for="shoeBrand"><b>Brand: </b></label>
                     <select id="shoeBrand">
@@ -103,12 +88,41 @@
                         <option value="Adidas" class="brand">Adidas</option>
                         <option value="Nike" class="brand">Nike</option>
                         <option value="Puma" class="brand">Puma</option>
-                    </select>
+                    </select> <br>
 
                     <button type="button" id="mySearchBtn" onclick="myFunction();">Search</button>
-                    </form>
-            </footer>
-        <script src="shoe_catalogue.js" charset="utf-8"></script>
+                </form>
+                <br>
+            <form id="addInput" action="index.html" method="get" text-align="center" style="display: none;">
+                <label for="brand">Brand</label>
+                <input type="text" id="addBrand" placeholder="Enter Shoe Brand e.g Nike">
+                <br>
+                <label for="color">Color</label>
+                <input type="text" id="addColor" placeholder="Enter Shoe Color">
+                <br>
+                <label for="price">Price</label>
+                <input type="text" id="addPrice" placeholder="Enter Shoe Price" min="1">
+                <br>
+                <label for="addInstock">Stock Quantity</label>
+                <input type="text" id="addInstock" placeholder="Enter Stock QTY e.g 12" min="1">
+                <br>
+                <label for="addSize">Size</label>
+                <input type="text" id="addSize" placeholder="Enter Shoe Size between 1 and 12" min="1" max="12"> <br>
+                <button type="button" name="myBtn" onclick="addStock();">Add</button>
+            </form>
+
+         <div class="slider" id="main-slider"> <!-- outermost container element-->
+                <div class="slider-wrapper"> <!-- innermost wrapper element-->
+                    <img src="sneaker-1.jpg" alt="First" class="slide" style="margin=auto" /> <!--slides -->
+                    <img src="sneaker-2.jpg" alt="Second" class="slide" style="margin=auto"/>
+                    <img src="sneaker-3.jpg" alt="Third" class="slide" style="margin=auto" />
+                    <img src="shoe.jpg" alt="Forth" class="slide" style="margin=auto" />
+                </div>
+            </div>
+
+        </footer>
+    <script src="shoe_catalogue.js" charset="utf-8"></script>
+
     </body>
 
 </html>

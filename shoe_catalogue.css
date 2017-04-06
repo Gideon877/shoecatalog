@@ -1,33 +1,26 @@
-.addInput {
-    background-color: red;
-    /*margin-left: 52%;
-    margin-top: -30%;*/
+#addInput {
+    font-family: 'Delius Unicase', cursive;
+    margin: auto;
+    text-align: end;
+    text-transform: uppercase;
+    width: auto;;
 }
 body {background-color: rgb(192, 190, 190);}
 h2 {
     font-family: 'Delius Unicase', cursive;
-    /*margin: auto;
-    width: 50%;
-    font-size: -webkit-xxx-large;
-    padding-bottom: 0%;
-    text-align: center;
-    padding-top: 0%;
-    text-transform: uppercase;
-    position: fixed;*/
 }
-
-.searchInput {
-    /*border: 1px dotted;*/
+#searchInput {
     font-family: 'Delius Unicase', cursive;
     margin: auto;
-    width: 50%;
+    width: auto;;
     padding-bottom: 0%;
-    text-align: center;
+    text-align: end;
     padding-top: 0%;
     text-transform: uppercase;
     margin-bottom: 2%;
     margin-top: 2%;
 }
+
 table {
     background-color: aliceblue;
     border-collapse: collapse;
@@ -46,16 +39,16 @@ html,body {
 	padding: 0;
 }
 .slider {
-	width: 774px;
-	margin: 2em auto;
-
+    width: 49%;
+    margin: 1em auto;
 }
 
 .slider-wrapper {
-	width: 100%;
-	height: 400px;
-	position: relative;
+    width: 143%;
+    height: 170px;
+    position: relative;
     margin: 0%;
+    /* margin-right: 48%; */
     margin-left: -100%;
 }
 
@@ -65,7 +58,7 @@ html,body {
 	width: 100%;
 	height: 100%;
 	opacity: 0;
-	transition: opacity 3s linear;
+	transition: opacity 5s linear;
 }
 
 .slider-wrapper > .slide:first-child {
