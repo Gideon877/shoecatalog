@@ -2,6 +2,7 @@
                     Author  : Thabang Gideon Magaola
                     E-mail  : thabang@projectcodex.co
 
+
 -------------------------------About the code -------------------------------------------------------------------------------------------------
                     *This is a simple online shoe catalogue that allows people to check stock.
                     *The user/customer have three options to select before they search for available stock whick is Shoe Brand, Shoe Color and Shoe Size.
@@ -37,11 +38,8 @@ function myFunction() {
     function brandFilter(input){ //this function returns selected brand
         return input.brand == shoeBrand.value;
     }
-    // clear user search option.
-    shoeColor.value = "";
-    shoeSize.value = "";
-    shoeBrand.value = "";
     var displayOutput = document.getElementById('displayOutput'); //define a variable for display
+
     if (searched !== undefined) {
         var myInfo = document.getElementById('myTable').innerHTML;
         var template = Handlebars.compile(myInfo);
@@ -50,15 +48,19 @@ function myFunction() {
         });
 
         if (searched.length <= 0) {
-            displayOutput.innerHTML = "Result Not Found";
+            displayOutput.innerHTML = "We are currently out of stock for " + shoeColor.value +", " + shoeBrand.value + " size "+ shoeSize.value+" at the moment.";
 
         } else if (searched.length > 0) {
             displayOutput.innerHTML = tableSearch;
         }
 
     } else if (searched === undefined) {
-        displayOutput.innerHTML = "Nothing selected";
+        displayOutput.innerHTML = "Nothing selected. Please select one of the options to view our stock.";
     }
+    // clear user search option.
+    shoeColor.value = "";
+    shoeSize.value = "";
+    shoeBrand.value = "";
 }
 function addStock(){
     var addBrand = document.getElementById('addBrand');
@@ -111,6 +113,49 @@ function addStock(){
     addInstock.value = "";
 }
 var shoes = [//Available Stock
+    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 1},
+    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 2},
+    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 3},
+    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 4},
+    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 5},
+    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 6},
+    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 7},
+    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 8},
+    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 9},
+    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 10},
+    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 11},
+    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 12},
+
+    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 10, size: 1},
+    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 10, size: 2},
+    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 10, size: 3},
+    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 10, size: 4},
+    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 10, size: 5},
+    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 20, size: 6},
+    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 20, size: 7},
+    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 15, size: 8},
+    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 15, size: 9},
+    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 8, size: 10},
+    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 5, size: 11},
+
+    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 1},
+    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 2},
+    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 3},
+    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 4},
+    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 5},
+    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 6},
+    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 7},
+
+    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 1},
+    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 2},
+    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 3},
+    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 4},
+    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 5},
+    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 6},
+    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 7},
+    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 8},
+    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 9},
+
     {brand: 'nike', color : 'black', price : 749, in_stock : 10, size: 1},
     {brand: 'nike', color : 'black', price : 749, in_stock : 10, size: 2},
     {brand: 'nike', color : 'black', price : 749, in_stock : 10, size: 3},
@@ -199,51 +244,8 @@ var shoes = [//Available Stock
     {brand: 'puma', color : 'green', price : 1459.99, in_stock : 15, size: 8},
     {brand: 'puma', color : 'green', price : 1459.99, in_stock : 15, size: 9},
     {brand: 'puma', color : 'green', price : 1459.99, in_stock : 8, size: 10},
-    {brand: 'puma', color : 'green', price : 1459.99, in_stock : 5, size: 11},
+    {brand: 'puma', color : 'green', price : 1459.99, in_stock : 5, size: 11}
 
-    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 1},
-    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 2},
-    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 3},
-    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 4},
-    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 5},
-    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 6},
-    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 7},
-    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 8},
-    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 9},
-    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 10},
-    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 11},
-    {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 12},
-
-    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 10, size: 1},
-    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 10, size: 2},
-    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 10, size: 3},
-    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 10, size: 4},
-    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 10, size: 5},
-    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 20, size: 6},
-    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 20, size: 7},
-    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 15, size: 8},
-    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 15, size: 9},
-    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 8, size: 10},
-    {brand: 'adidas', color : 'white', price : 1999.99, in_stock : 5, size: 11},
-
-
-    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 1},
-    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 2},
-    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 3},
-    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 4},
-    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 5},
-    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 6},
-    {brand: 'adidas', color : 'blue', price : 999.99, in_stock : 10, size: 7},
-
-    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 1},
-    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 2},
-    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 3},
-    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 4},
-    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 5},
-    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 6},
-    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 7},
-    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 8},
-    {brand: 'adidas', color : 'green', price : 650, in_stock : 10, size: 9}
 ];
 function hideShowSearch(){
     var z = document.getElementById('searchInput');
@@ -333,3 +335,6 @@ function hideShowAdd(){
 
 
 })();
+
+localStorage.setItem('shoes', JSON.stringify(shoes));
+console.log(JSON.parse(localStorage.getItem('shoes')));

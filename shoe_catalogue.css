@@ -110,6 +110,7 @@ option {
     text-transform: capitalize;
 }
 button {
+    cursor: pointer;
     background-color: black;
     color: aqua;
     -webkit-animation-name: example;
@@ -129,9 +130,9 @@ button {
 }
 
 body {
-   animation: colorchange 50s; /* animation-name followed by duration in seconds*/
+   animation: colorchange 5s; /* animation-name followed by duration in seconds*/
       /* you could also use milliseconds (ms) or something like 2.5s */
-   -webkit-animation: colorchange 50s; /* Chrome and Safari */
+   -webkit-animation: colorchange 5s; /* Chrome and Safari */
  }
 
  @keyframes colorchange
