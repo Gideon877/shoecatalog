@@ -8,29 +8,30 @@
         <script src="handlebars-v4.0.5.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Delius+Unicase:400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Arapey|EB+Garamond" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Arima+Madurai" rel="stylesheet">
         <link rel="stylesheet" href="shoe_catalogue.css">
     </head>
     <body>
         <header class="site-header">
             <h2>Shoe Catalogue</h2>
-            <!-- <a href="shoe.jpg">Home</a>
-            <a href="#news">News</a>
-            <a href="#newrel">New Release</a> -->
-
-
+            <span>Search Sneakers</span>
+            <span>Add a new stock</span> <br>
+            <button type="button" onclick="hideShowSearch();">Hide/Show</button>
+            <button type="button" onclick="hideShowAdd();">Hide/Show</button>
         </header>
 
         <main>
-            <script id="j" type="text/x-handlebars-template">
+            <h2 align="center" id="myResult">The result will show here</h2>
+            <script id="myTable" type="text/x-handlebars-template">
                 <table align="center">
-                    <thead><b>Results Found :-)</b></thead>
+                    <thead></thead>
                     <tbody>
                         <tr>
-                            <td>Brand</td>
-                            <td>Color</td>
-                            <td>Price</td>
-                            <td>In Stock</td>
-                            <td>Size</td>
+                            <th>Brand</th>
+                            <th>Color</th>
+                            <th>Price</th>
+                            <th>In Stock</th>
+                            <th>Size</th>
                         </tr>
                         {{#each searched}}
                         <tr>
@@ -49,10 +50,10 @@
         </main>
 
         <footer class="site-footer">
-            <span>Search Sneakers</span>
+            <!-- <span>Search Sneakers</span>
             <button type="button" onclick="hideShowSearch();">Hide/Show</button>
             <span>Add a new stock</span>
-            <button type="button" onclick="hideShowAdd();">Hide/Show</button>
+            <button type="button" onclick="hideShowAdd();">Hide/Show</button> -->
 
             <form id="searchInput" action="index.html" method="get" style="display: none;">
                     <label for="shoeSize"><b>Size: </b></label>
@@ -85,9 +86,9 @@
                     <label for="shoeBrand"><b>Brand: </b></label>
                     <select id="shoeBrand">
                         <option value="" disabled selected>Select your option</option>
-                        <option value="Adidas" class="brand">Adidas</option>
-                        <option value="Nike" class="brand">Nike</option>
-                        <option value="Puma" class="brand">Puma</option>
+                        <option value="adidas" class="brand">Adidas</option>
+                        <option value="nike" class="brand">Nike</option>
+                        <option value="puma" class="brand">Puma</option>
                     </select> <br>
 
                     <button type="button" id="mySearchBtn" onclick="myFunction();">Search</button>
@@ -122,7 +123,6 @@
 
         </footer>
     <script src="shoe_catalogue.js" charset="utf-8"></script>
-
     </body>
 
 </html>

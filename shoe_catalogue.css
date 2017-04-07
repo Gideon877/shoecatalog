@@ -5,10 +5,6 @@
     text-transform: uppercase;
     width: auto;;
 }
-body {background-color: rgb(192, 190, 190);}
-h2 {
-    font-family: 'Delius Unicase', cursive;
-}
 #searchInput {
     font-family: 'Delius Unicase', cursive;
     margin: auto;
@@ -20,9 +16,8 @@ h2 {
     margin-bottom: 2%;
     margin-top: 2%;
 }
-
 table {
-    background-color: aliceblue;
+    background-color: pink;
     border-collapse: collapse;
     font-family: 'EB Garamond', serif;
     font-family: 'Arapey', serif;
@@ -42,7 +37,6 @@ html,body {
     width: 49%;
     margin: 1em auto;
 }
-
 .slider-wrapper {
     width: 143%;
     height: 170px;
@@ -51,7 +45,6 @@ html,body {
     /* margin-right: 48%; */
     margin-left: -100%;
 }
-
 .slide {
 	float: left;
 	position: absolute;
@@ -60,21 +53,17 @@ html,body {
 	opacity: 0;
 	transition: opacity 5s linear;
 }
-
 .slider-wrapper > .slide:first-child {
 	opacity: 1;
 }
-
 html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
 }
-
 .wf-active body {
     font-family: 'Source Sans Pro', sans-serif;
 }
-
 body {
     font-family: sans-serif;
     background-color: #ddd;
@@ -82,52 +71,100 @@ body {
     margin: 0;
     /*border: 1px solid red;*/
 }
-.site-header {
-    text-align: center;
-    padding: 1em 0;
-    border-bottom: solid 1px #ccc;
-    background-color: #fff;
-    float: left;
-    clear: left;
-    width: 35%;
-}
-
-.site-header {
-    text-align: center;
-    padding: 1em 0;
-    border-bottom: solid 1px black;
-    background-color: skyblue;
-
-
-}
 main {
     padding: 1em;
-    background-color: purple;
-}
-main {
     float: right;
     width: 60%;
+    font-family: 'Arima Madurai', cursive;
 }
 h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
+    font-family: 'Delius Unicase', cursive;
     line-height: 1;
+    margin-top: 0;
 }
-
 h1 {
     font-size: 2em;
     margin: 0.67em 0;
 }
-
+.site-header {
+    background-color: skyblue;
+    border-bottom: solid 1px black;
+    clear: left;
+    float: left;
+    padding: 1em 0;
+    text-align: center;
+    width: 35%;
+}
 .site-footer {
     text-align: center;
     padding: 1em 0;
     border-bottom: solid 1px black;
     background-color: pink;
-
 }
-
 .site-header, .site-footer {
     float: left;
     clear: left;
     width: 35%;
+}
+option {
+    text-transform: capitalize;
+}
+button {
+    background-color: black;
+    color: aqua;
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 4s;
+    animation-name: example;
+    animation-duration: 4s;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    from {background-color: green;}
+    to {background-color: yellow;}
+}
+/* Standard syntax */
+@keyframes example {
+    from {background-color: green;}
+    to {background-color: yellow;}
+}
+
+body {
+   animation: colorchange 50s; /* animation-name followed by duration in seconds*/
+      /* you could also use milliseconds (ms) or something like 2.5s */
+   -webkit-animation: colorchange 50s; /* Chrome and Safari */
+ }
+
+ @keyframes colorchange
+ {
+   0%   {background: #4a0808;}
+   25%  {background: #ab3f6c;}
+   50%  {background: #a04cb5;}
+   75%  {background: #398e8a;}
+   100% {background: #59a069;}
+ }
+
+ @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+ {
+   0%   {background: red;}
+   25%  {background: yellow;}
+   50%  {background: blue;}
+   75%  {background: green;}
+   100% {background: red;}
+ }
+td{
+    text-transform: capitalize;
+    font-weight: 100;
+}
+span{
+    font-size: medium;
+    font-family: -webkit-pictograph;
+    font-style: italic;
+    text-decoration: overline;
+}
+
+th {
+    font-family: 'Arima Madurai', cursive;
+}
+#myResult{
+    color: white;
 }
