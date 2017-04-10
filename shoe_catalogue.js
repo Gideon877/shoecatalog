@@ -9,6 +9,10 @@
                     *After pressing the search button the shoe’s price and the number of shoes in stock is displayed.
                     *The customer can add some more stock.
 */
+if (localStorage['shoes']) {
+    shoes = JSON.parse(localStorage['shoes']);
+}
+
 function myFunction() {
 
     if (shoeSize.value !== "") { //selected a size.
@@ -41,8 +45,8 @@ function myFunction() {
     var displayOutput = document.getElementById('displayOutput'); //define a variable for display
 
     if (searched !== undefined) {
-        var myInfo = document.getElementById('myTable').innerHTML;
-        var template = Handlebars.compile(myInfo);
+        var myInfo = document.getElementById('myTable');
+        var template = Handlebars.compile(myInfo.innerHTML);
         var tableSearch = template({
             searched
         });
@@ -53,11 +57,11 @@ function myFunction() {
         } else if (searched.length > 0) {
             displayOutput.innerHTML = tableSearch;
         }
-
     } else if (searched === undefined) {
         displayOutput.innerHTML = "Nothing selected. Please select one of the options to view our stock.";
     }
     // clear user search option.
+    localStorage['shoes'] = JSON.stringify(shoes);
     shoeColor.value = "";
     shoeSize.value = "";
     shoeBrand.value = "";
@@ -88,7 +92,6 @@ function addStock(){
 
     function CreateProp(propertyName, propertyValue){
         shoes1[propertyName] = propertyValue;
-        //alert(shoes[propertyName]);  // prints "MyValue"
       };
 
       shoes.push(shoes1);
@@ -112,6 +115,94 @@ function addStock(){
     addPrice.value = "";
     addInstock.value = "";
 }
+function hideShowSearch(){
+    var z = document.getElementById('searchInput');
+
+    if (z.style.display === 'none') {
+        z.style.display = 'block';
+
+    } else {
+        z.style.display = 'none'
+    }
+
+}
+function hideShowAdd(){
+    var x = document.getElementById('addInput');
+
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+
+    } else {
+        x.style.display = 'none'
+    }
+
+}
+(function() {
+
+    function Slideshow( element ) {
+        this.el = document.querySelector( element );
+        this.init();
+    }
+
+    Slideshow.prototype = {
+        init: function() {
+            this.wrapper = this.el.querySelector( ".slider-wrapper" );
+            this.slides = this.el.querySelectorAll( ".slide" );
+            this.previous = this.el.querySelector( ".slider-previous" );
+            this.next = this.el.querySelector( ".slider-next" );
+            this.index = 0;
+            this.total = this.slides.length;
+            this.timer = null;
+
+            this.action();
+            this.stopStart();
+        },
+        _slideTo: function( slide ) {
+            var currentSlide = this.slides[slide];
+            currentSlide.style.opacity = 1;
+
+            for( var i = 0; i < this.slides.length; i++ ) {
+                var slide = this.slides[i];
+                if( slide !== currentSlide ) {
+                    slide.style.opacity = 0;
+                }
+            }
+        },
+        action: function() {
+            var self = this;
+            self.timer = setInterval(function() {
+                self.index++;
+                if( self.index == self.slides.length ) {
+                    self.index = 0;
+                }
+                self._slideTo( self.index );
+
+            }, 3000);
+        },
+        stopStart: function() {
+            var self = this;
+            self.el.addEventListener( "mouseover", function() {
+                clearInterval( self.timer );
+                self.timer = null;
+
+            }, false);
+            self.el.addEventListener( "mouseout", function() {
+                self.action();
+
+            }, false);
+        }
+
+
+    };
+
+    document.addEventListener( "DOMContentLoaded", function() {
+
+        var slider = new Slideshow( "#main-slider" );
+
+    });
+
+
+})();
 var shoes = [//Available Stock
     {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 1},
     {brand: 'adidas', color : 'black', price : 749, in_stock : 10, size: 2},
@@ -247,94 +338,6 @@ var shoes = [//Available Stock
     {brand: 'puma', color : 'green', price : 1459.99, in_stock : 5, size: 11}
 
 ];
-function hideShowSearch(){
-    var z = document.getElementById('searchInput');
 
-    if (z.style.display === 'none') {
-        z.style.display = 'block';
-
-    } else {
-        z.style.display = 'none'
-    }
-
-}
-function hideShowAdd(){
-    var x = document.getElementById('addInput');
-
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-
-    } else {
-        x.style.display = 'none'
-    }
-
-}
-(function() {
-
-    function Slideshow( element ) {
-        this.el = document.querySelector( element );
-        this.init();
-    }
-
-    Slideshow.prototype = {
-        init: function() {
-            this.wrapper = this.el.querySelector( ".slider-wrapper" );
-            this.slides = this.el.querySelectorAll( ".slide" );
-            this.previous = this.el.querySelector( ".slider-previous" );
-            this.next = this.el.querySelector( ".slider-next" );
-            this.index = 0;
-            this.total = this.slides.length;
-            this.timer = null;
-
-            this.action();
-            this.stopStart();
-        },
-        _slideTo: function( slide ) {
-            var currentSlide = this.slides[slide];
-            currentSlide.style.opacity = 1;
-
-            for( var i = 0; i < this.slides.length; i++ ) {
-                var slide = this.slides[i];
-                if( slide !== currentSlide ) {
-                    slide.style.opacity = 0;
-                }
-            }
-        },
-        action: function() {
-            var self = this;
-            self.timer = setInterval(function() {
-                self.index++;
-                if( self.index == self.slides.length ) {
-                    self.index = 0;
-                }
-                self._slideTo( self.index );
-
-            }, 3000);
-        },
-        stopStart: function() {
-            var self = this;
-            self.el.addEventListener( "mouseover", function() {
-                clearInterval( self.timer );
-                self.timer = null;
-
-            }, false);
-            self.el.addEventListener( "mouseout", function() {
-                self.action();
-
-            }, false);
-        }
-
-
-    };
-
-    document.addEventListener( "DOMContentLoaded", function() {
-
-        var slider = new Slideshow( "#main-slider" );
-
-    });
-
-
-})();
-
-localStorage.setItem('shoes', JSON.stringify(shoes));
-console.log(JSON.parse(localStorage.getItem('shoes')));
+// localStorage.setItem('shoes', JSON.stringify(shoes));
+// console.log(JSON.parse(localStorage.getItem('shoes')));
