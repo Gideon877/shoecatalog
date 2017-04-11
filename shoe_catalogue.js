@@ -96,14 +96,14 @@ function addStock(){
 
       shoes.push(shoes1);
 
-    if (addedBrands.length <= 0) {//Brand
+    if (addedBrands.length <= 0 && !addBrand.value.startsWith("")) {//Brand
         var brandOption = document.getElementById('shoeBrand');
         var option = document.createElement('option');
         option.text = addBrand.value;
         brandOption.add(option);
 
     }
-    if (addedColor.length <= 0) {//Color
+    if (addedColor.length <= 0 && !addColor.value.startsWith("")) {//Color
         var colorOption = document.getElementById('shoeColor');
         var option = document.createElement('option');
         option.text = addColor.value;

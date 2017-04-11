@@ -1,3 +1,7 @@
+#displayOutput {
+    color: aqua;
+}
+p {color: white;font-weight: 500;font-size: small;}
 #addInput {
     font-family: 'Delius Unicase', cursive;
     margin: auto;
@@ -17,7 +21,7 @@
     margin-top: 2%;
 }
 table {
-    background-color: pink;
+    background-color: #b31d1d;
     border-collapse: collapse;
     font-family: 'EB Garamond', serif;
     font-family: 'Arapey', serif;
@@ -130,28 +134,8 @@ button {
 }
 
 body {
-   animation: colorchange 5s; /* animation-name followed by duration in seconds*/
-      /* you could also use milliseconds (ms) or something like 2.5s */
-   -webkit-animation: colorchange 5s; /* Chrome and Safari */
- }
-
- @keyframes colorchange
- {
-   0%   {background: #4a0808;}
-   25%  {background: #ab3f6c;}
-   50%  {background: #a04cb5;}
-   75%  {background: #398e8a;}
-   100% {background: #59a069;}
- }
-
- @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
- {
-   0%   {background: red;}
-   25%  {background: yellow;}
-   50%  {background: blue;}
-   75%  {background: green;}
-   100% {background: red;}
- }
+    background-image: url('nik.jpg');
+}
 td{
     text-transform: capitalize;
     font-weight: 100;
