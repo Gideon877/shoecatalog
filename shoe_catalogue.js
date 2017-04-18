@@ -12,9 +12,7 @@
 if (localStorage['shoes']) {
     shoes = JSON.parse(localStorage['shoes']);
 }
-
 function myFunction() {
-
     if (shoeSize.value !== "") { //selected a size.
         var searched = shoes.filter(sizeFilter); //New shoe list
     }
@@ -43,12 +41,14 @@ function myFunction() {
         return input.brand == shoeBrand.value;
     }
     var displayOutput = document.getElementById('displayOutput'); //define a variable for display
+    // myOptions();
 
     if (searched !== undefined) {
         var myInfo = document.getElementById('myTable');
         var template = Handlebars.compile(myInfo.innerHTML);
         var tableSearch = template({
-            searched
+            searched: searched.sort()
+
         });
 
         if (searched.length <= 0) {
@@ -95,6 +95,7 @@ function addStock(){
       };
 
       shoes.push(shoes1);
+      //myOptions()
 
     if (addedBrands.length <= 0) {//Brand
         var brandOption = document.getElementById('shoeBrand');
@@ -115,6 +116,48 @@ function addStock(){
     addPrice.value = "";
     addInstock.value = "";
 }
+function myOptions() {
+    var uniQBrands = []; var uniQColors = []; var uniQSizes = [];
+    var brandMap = {}; var colorMap = {}; var sizeMap = {};
+    for (var i=0; i<shoes.length; i++){
+    	var b = shoes[i].brand; var c = shoes[i].color; var s = shoes[i].size;
+
+    	var foundBrand = false; var foundColor = false; var foundSize = false;
+
+    	if(brandMap[b] === undefined){
+    		brandMap[b] = b;
+    		uniQBrands.push(b);
+    	}
+        if(sizeMap[s] === undefined){
+            sizeMap[s] = s;
+            uniQSizes.push(s);
+        }
+        if(colorMap[c] === undefined){
+            colorMap[c] = c;
+            uniQColors.push(c);
+        }
+    }
+    function sort(a,b) {
+        return a - b;
+    }
+    uniQSizes.sort();
+    uniQBrands.sort();
+    uniQColors.sort();
+
+    var myInfo = document.getElementById('op');
+    var template = Handlebars.compile(myInfo.innerHTML);
+    var tableSearch = template({
+        uniQSizes, uniQBrands, uniQColors
+    });
+
+    document.getElementById('d').innerHTML = tableSearch;
+
+    console.log(uniQBrands);
+    console.log(uniQColors);
+    console.log(uniQSizes);
+}
+myOptions();
+
 function hideShowSearch(){
     var z = document.getElementById('searchInput');
 

@@ -25,7 +25,7 @@
                 * This is a simple online shoe catalogue that allows people to check stock. <br>
                 * The user/customer have three options to select before they search for available stock whick is Shoe Brand, Shoe Color and Shoe Size. <br>
                 * After pressing the search button the shoe’s price and the number of shoes in stock is displayed. <br>
-                * The customer can add some more stock. 
+                * The customer can add some more stock.
             </p>
             <h2 align="center" id="myResult">The result will show here</h2>
             <script id="myTable" type="text/x-handlebars-template">
@@ -52,48 +52,43 @@
                 </table>
             </script>
             <div align="center" id="displayOutput"></div>
+
         </main>
 
         <footer class="site-footer">
 
-            <form id="searchInput" action="index.html" method="get" style="display: none;">
-                    <label for="shoeSize"><b>Size: </b></label>
-                    <select id="shoeSize">
-                        <option value="" disabled selected>Select your option</option>
-                        <option value="1" class="size">1</option>
-                        <option value="2" class="size">2</option>
-                        <option value="3" class="size">3</option>
-                        <option value="4" class="size">4</option>
-                        <option value="5" class="size">5</option>
-                        <option value="6" class="size">6</option>
-                        <option value="7" class="size">7</option>
-                        <option value="8" class="size">8</option>
-                        <option value="9" class="size">9</option>
-                        <option value="10" class="size">10</option>
-                        <option value="11" class="size">11</option>
-                        <option value="12" class="size">12</option>
+            <div id="d"></div>
+            <script id="op" type="text/x-handlebars-template">
 
-                    </select> <br>
+                <form id="searchInput" action="index.html" method="get" style="display: none;">
+                        <label for="shoeSize"><b>Size: </b></label>
+                        <select id="shoeSize">
+                            <option value="" disabled selected>Select your option</option>
+                                {{#each uniQSizes}}
+                                    <option>{{this}}</option>
+                                {{/each}}
+                        </select> <br>
 
-                    <label for="shoeColor"><b>Colour: </b></label>
-                    <select id="shoeColor">
-                        <option value="" disabled selected>Select your option</option>
-                        <option value="black" class="colour">Black</option>
-                        <option value="blue" class="colour">Blue</option>
-                        <option value="green" class="colour">Green</option>
-                        <option value="white" class="colour">White</option>
-                    </select> <br>
+                        <label for="shoeColor"><b>Colour: </b></label>
+                        <select id="shoeColor">
+                            <option value="" disabled selected>Select your option</option>
+                                {{#each uniQColors}}
+                                    <option>{{this}}</option>
+                                {{/each}}
+                        </select> <br>
 
-                    <label for="shoeBrand"><b>Brand: </b></label>
-                    <select id="shoeBrand">
-                        <option value="" disabled selected>Select your option</option>
-                        <option value="adidas" class="brand">Adidas</option>
-                        <option value="nike" class="brand">Nike</option>
-                        <option value="puma" class="brand">Puma</option>
-                    </select> <br>
+                        <label for="shoeBrand"><b>Brand: </b></label>
+                        <select id="shoeBrand">
+                            <option value="" disabled selected>Select your option</option>
+                                {{#each uniQBrands}}
+                                    <option>{{this}}</option>
+                                {{/each}}
+                        </select> <br>
 
-                    <button type="button" id="mySearchBtn" onclick="myFunction();">Search</button>
+                        <button type="button" id="mySearchBtn" onclick="myFunction();">Search</button>
                 </form>
+            </script>
+
                 <br>
             <form id="addInput" action="index.html" method="get" text-align="center" style="display: none;">
                 <label for="brand">Brand</label>
