@@ -47,7 +47,7 @@ function myFunction() {
         var myInfo = document.getElementById('myTable');
         var template = Handlebars.compile(myInfo.innerHTML);
         var tableSearch = template({
-            searched: searched.sort()
+            searched
 
         });
 
@@ -94,22 +94,9 @@ function addStock(){
         shoes1[propertyName] = propertyValue;
       };
 
-      shoes.push(shoes1);
-      //myOptions()
+    shoes.push(shoes1);
+    myOptions();
 
-    if (addedBrands.length <= 0) {//Brand
-        var brandOption = document.getElementById('shoeBrand');
-        var option = document.createElement('option');
-        option.text = addBrand.value;
-        brandOption.add(option);
-
-    }
-    if (addedColor.length <= 0) {//Color
-        var colorOption = document.getElementById('shoeColor');
-        var option = document.createElement('option');
-        option.text = addColor.value;
-        colorOption.add(option);
-    }
     addBrand.value = "";
     addColor.value = "";
     addSize.value = "";
