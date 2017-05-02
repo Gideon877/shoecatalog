@@ -1,124 +1,127 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <link rel="shortcut icon" href="nik.jpg">
-        <title>TM | Sneakers</title>
-        <script src="handlebars-v4.0.5.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Delius+Unicase:400,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Arapey|EB+Garamond" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Arima+Madurai" rel="stylesheet">
-        <link rel="stylesheet" href="shoe_catalogue.css">
-    </head>
-    <body>
-        <header class="site-header">
-            <h2>Shoe Catalogue</h2>
-            <span>Search Sneakers</span>
-            <span>Add a new stock</span> <br>
-            <button type="button" onclick="hideShowSearch();">Hide/Show</button>
-            <button type="button" onclick="hideShowAdd();">Hide/Show</button>
-        </header>
 
-        <main>
-            <p align="center">
-                * This is a simple online shoe catalogue that allows people to check stock. <br>
-                * The user/customer have three options to select before they search for available stock whick is Shoe Brand, Shoe Color and Shoe Size. <br>
-                * After pressing the search button the shoe’s price and the number of shoes in stock is displayed. <br>
-                * The customer can add some more stock.
-            </p>
-            <h2 align="center" id="myResult">The result will show here</h2>
-            <script id="myTable" type="text/x-handlebars-template">
-                <table align="center">
-                    <thead></thead>
-                    <tbody>
-                        <tr>
-                            <th>Brand</th>
-                            <th>Color</th>
-                            <th>Price</th>
-                            <th>In Stock</th>
-                            <th>Size</th>
-                        </tr>
-                        {{#each searched}}
-                        <tr>
-                            <td>{{brand}}</td>
-                            <td>{{color}}</td>
-                            <td>R{{price}}</td>
-                            <td>{{in_stock}}</td>
-                            <td>{{size}}</td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
-            </script>
-            <div align="center" id="displayOutput"></div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="nik.jpg">
+    <title>TM | Sneakers</title>
+    <script src="handlebars-v4.0.5.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Delius+Unicase:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arapey|EB+Garamond" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai" rel="stylesheet">
+    <link rel="stylesheet" href="shoe_catalogue.css">
+</head>
 
-        </main>
+<body>
+    <header class="site-header">
+        <h2>Shoe Catalogue</h2>
+        <span>Search Sneakers</span>
+        <span>Add a new stock</span> <br>
+        <button type="button" onclick="hideShowSearch();">Hide/Show</button>
+        <button type="button" onclick="hideShowAdd();">Hide/Show</button>
+    </header>
 
-        <footer class="site-footer">
+    <main>
+        <p align="center">
+            * This is a simple online shoe catalogue that allows people to check stock. <br> * The user/customer have three options to select before they search for available stock whick is Shoe Brand, Shoe Color and Shoe Size. <br> * After pressing the
+            search button the shoe’s price and the number of shoes in stock is displayed. <br> * The customer can add some more stock.
+        </p>
+        <h2 align="center" id="myResult">The result will show here</h2>
+        <script id="myTable" type="text/x-handlebars-template">
+            <table align="center">
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Color</th>
+                        <th>Price</th>
+                        <th>In Stock</th>
+                        <th>Size</th>
+                    </tr>
+                    {{#each searched}}
+                    <tr>
+                        <td>{{brand}}</td>
+                        <td>{{color}}</td>
+                        <td>R{{price}}</td>
+                        <td>{{in_stock}}</td>
+                        <td>{{size}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </script>
+        <div align="center" id="displayOutput"></div>
 
-            <div id="d"></div>
-            <script id="op" type="text/x-handlebars-template">
+    </main>
 
-                <form id="searchInput" action="index.html" method="get" style="display: none;">
-                        <label for="shoeSize"><b>Size: </b></label>
-                        <select id="shoeSize">
+    <footer class="site-footer">
+
+        <div id="d"></div>
+        <script id="op" type="text/x-handlebars-template">
+            <div id="searchInput" style="display: none;">
+
+                <label for="shoeSize"><b>Size: </b></label>
+                <select id="shoeSize">
                             <option value="" disabled selected>Select your option</option>
                                 {{#each uniQSizes}}
                                     <option>{{this}}</option>
                                 {{/each}}
                         </select> <br>
 
-                        <label for="shoeColor"><b>Colour: </b></label>
-                        <select id="shoeColor">
+                <label for="shoeColor"><b>Colour: </b></label>
+                <select id="shoeColor">
                             <option value="" disabled selected>Select your option</option>
                                 {{#each uniQColors}}
                                     <option>{{this}}</option>
                                 {{/each}}
                         </select> <br>
 
-                        <label for="shoeBrand"><b>Brand: </b></label>
-                        <select id="shoeBrand">
+                <label for="shoeBrand"><b>Brand: </b></label>
+                <select id="shoeBrand">
                             <option value="" disabled selected>Select your option</option>
                                 {{#each uniQBrands}}
                                     <option>{{this}}</option>
                                 {{/each}}
                         </select> <br>
 
-                        <button type="button" id="mySearchBtn" onclick="myFunction();">Search</button>
-                </form>
-            </script>
-
-                <br>
-            <form id="addInput" action="index.html" method="get" text-align="center" style="display: none;">
-                <label for="brand">Brand</label>
-                <input type="text" id="addBrand" placeholder="Enter Shoe Brand e.g Nike">
-                <br>
-                <label for="color">Color</label>
-                <input type="text" id="addColor" placeholder="Enter Shoe Color">
-                <br>
-                <label for="price">Price</label>
-                <input type="text" id="addPrice" placeholder="Enter Shoe Price" min="1">
-                <br>
-                <label for="addInstock">Stock Quantity</label>
-                <input type="text" id="addInstock" placeholder="Enter Stock QTY e.g 12" min="1">
-                <br>
-                <label for="addSize">Size</label>
-                <input type="text" id="addSize" placeholder="Enter Shoe Size between 1 and 12" min="1" max="12"> <br>
-                <button type="button" name="myBtn" onclick="addStock();">Add</button>
-            </form>
-
-         <div class="slider" id="main-slider"> <!-- outermost container element-->
-                <div class="slider-wrapper"> <!-- innermost wrapper element-->
-                    <img src="sneaker-1.jpg" alt="First" class="slide" style="margin=auto" /> <!--slides -->
-                    <img src="sneaker-2.jpg" alt="Second" class="slide" style="margin=auto"/>
-                    <img src="sneaker-3.jpg" alt="Third" class="slide" style="margin=auto" />
-                    <img src="shoe.jpg" alt="Forth" class="slide" style="margin=auto" />
-                </div>
+                <button type="button" id="mySearchBtn" onclick="myFunction();">Search</button>
             </div>
+        </script>
 
-        </footer>
+        <br>
+        <div id="addInput" text-align="center" style="display: none;">
+            <label for="brand">Brand</label>
+            <input type="text" id="addBrand" placeholder="Enter Shoe Brand e.g Nike">
+            <br>
+            <label for="color">Color</label>
+            <input type="text" id="addColor" placeholder="Enter Shoe Color">
+            <br>
+            <label for="price">Price</label>
+            <input type="text" id="addPrice" placeholder="Enter Shoe Price" min="1">
+            <br>
+            <label for="addInstock">Stock Quantity</label>
+            <input type="text" id="addInstock" placeholder="Enter Stock QTY e.g 12" min="1">
+            <br>
+            <label for="addSize">Size</label>
+            <input type="text" id="addSize" placeholder="Enter Shoe Size between 1 and 12" min="1" max="12"> <br>
+            <button type="button" name="myBtn" onclick="addStock();">Add</button>
+        </div>
+
+        <div class="slider" id="main-slider">
+            <!-- outermost container element-->
+            <div class="slider-wrapper">
+                <!-- innermost wrapper element-->
+                <img src="sneaker-1.jpg" alt="First" class="slide" style="margin=auto" />
+                <!--slides -->
+                <img src="sneaker-2.jpg" alt="Second" class="slide" style="margin=auto" />
+                <img src="sneaker-3.jpg" alt="Third" class="slide" style="margin=auto" />
+                <img src="shoe.jpg" alt="Forth" class="slide" style="margin=auto" />
+            </div>
+        </div>
+
+    </footer>
     <script src="shoe_catalogue.js" charset="utf-8"></script>
-    </body>
+</body>
 
 </html>
