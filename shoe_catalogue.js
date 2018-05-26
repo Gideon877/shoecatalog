@@ -1,6 +1,6 @@
 /*
                     Author  : Thabang Gideon Magaola
-                    E-mail  : thabang@projectcodex.co
+                    E-mail  : gideon877@live.com
 
 
 -------------------------------About the code -------------------------------------------------------------------------------------------------
